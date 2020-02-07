@@ -186,6 +186,38 @@ body {
     height: 1cm;
 }
 
+.qualification-container {
+    width: 100%;
+}
+
+.qualification-container h3 {
+    text-align: center;
+    border-bottom: 1px dashed var(--colorPrimaryDark);
+}
+
+.qualification-container .subtitle {
+    width: 100%;
+    text-align: center;
+}
+
+.qualification-container h4 {
+    font-style: italic;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.qualification-container .logo {
+    margin-right: 15px;
+    width: 5cm;
+    vertical-align: middle;
+}
+
+.qualification-container .row-title {
+    font-weight: bold;
+    color: var(--colorAccent);
+    text-align: left;
+}
+
 
 /* Clear floats after the columns */
 
