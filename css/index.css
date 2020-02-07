@@ -1,0 +1,225 @@
+:root {
+    --pageBackground: #eff6ee;
+    --colorPrimary: #787d92;
+    --colorPrimaryDark: #273043;
+    --colorAccent: #f02d3a;
+    --colorAccent2: rgb(0, 214, 71);
+    --colorAccentDark: #bd212b;
+    --navColor: white;
+    --shadowColor: #555555;
+    --profileTextColor: black;
+    --boxShadowStyle: 1px 1px 10px var(--shadowColor);
+    --cardBackground: white;
+    --accentBorderStyle: 5px solid var(--colorAccent);
+    --fastTransitionDuration: 0.3s;
+    --mediumTransitionDuration: 0.4s;
+    --longTransitionDuration: 0.6s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    background: var(--pageBackground);
+}
+
+
+/* Header/Blog Title */
+
+.header {
+    text-align: center;
+    background-image: url("img/index_header.jpg")
+}
+
+.header h1 {
+    color: var(--profileTextColor);
+    font-size: 40px;
+    text-shadow: 0px 3px 6px 6px rgba(51, 51, 51, 0.35);
+}
+
+.header h2 {
+    color: var(--profileTextColor);
+    font-size: 25px;
+}
+
+.trailing-underscore {
+    animation: blinkingText 1.0s infinite;
+}
+
+@keyframes blinkingText {
+    0% {
+        color: var(--profileTextColor);
+    }
+    49% {
+        color: var(--profileTextColor);
+    }
+    60% {
+        color: transparent;
+    }
+    99% {
+        color: transparent;
+    }
+    100% {
+        color: var(--profileTextColor);
+    }
+}
+
+.header .profile-container img {
+    width: 6cm;
+    height: 6cm;
+    border-radius: 50%;
+    border: var(--accentBorderStyle);
+    box-shadow: var(--boxShadowStyle);
+}
+
+
+/* Style the top navigation bar */
+
+.topnav {
+    overflow: hidden;
+    background-color: var(--colorPrimaryDark);
+    border-bottom: var(--accentBorderStyle);
+    box-shadow: var(--boxShadowStyle);
+    margin-bottom: 10px;
+    transition: var(--fastTransitionDuration);
+}
+
+.topnav:hover {
+    border-bottom-color: var(--colorAccent2);
+}
+
+
+/* Style the topnav links */
+
+.topnav a {
+    float: left;
+    display: block;
+    color: var(--navColor);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: var(--fastTransitionDuration);
+}
+
+.topnav a.active {
+    background: var(--colorPrimary);
+}
+
+
+/* Change color on hover */
+
+.topnav a:hover {
+    color: var(--colorAccent);
+}
+
+
+/* Create two unequal columns that floats next to each other */
+
+
+/* Left column */
+
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+
+/* Right column */
+
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+
+/* Fake image */
+
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+
+/* Add a card effect for articles */
+
+.card {
+    background-color: var(--cardBackground);
+    padding: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: var(--accentBorderStyle);
+    box-shadow: var(--boxShadowStyle);
+    transition: var(--fastTransitionDuration);
+}
+
+.card:hover {
+    border-bottom-color: var(--colorAccent2);
+}
+
+.card i {
+    color: var(--colorAccent);
+}
+
+.card .quote {
+    font-size: 24px;
+    margin: 5px;
+}
+
+.social-links {
+    text-align: center;
+}
+
+.social-links a {
+    display: inline-block;
+}
+
+.social-links img {
+    margin-right: 0.5cm;
+    margin-left: 0.5cm;
+    width: 1cm;
+    height: 1cm;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 800px) {
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
