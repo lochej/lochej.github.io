@@ -68,8 +68,8 @@ body {
 }
 
 .header .profile-container img {
-    width: 6cm;
-    height: 6cm;
+    width: 5cm;
+    height: 5cm;
     border-radius: 50%;
     border: var(--accentBorderStyle);
     box-shadow: var(--boxShadowStyle);
@@ -136,23 +136,14 @@ body {
 }
 
 
-/* Fake image */
-
-.fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-}
-
-
 /* Add a card effect for articles */
 
 .card {
     background-color: var(--cardBackground);
-    padding: 20px;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding: 10px 20px 10px 20px;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-bottom: var(--accentBorderStyle);
     box-shadow: var(--boxShadowStyle);
     transition: var(--fastTransitionDuration);
@@ -208,7 +199,8 @@ body {
 
 .qualification-container .logo {
     margin-right: 15px;
-    width: 5cm;
+    max-width: 5cm;
+    max-height: 2cm;
     vertical-align: middle;
 }
 
@@ -216,6 +208,30 @@ body {
     font-weight: bold;
     color: var(--colorAccent);
     text-align: left;
+}
+
+.flag {
+    max-width: 1cm;
+    max-height: 1cm;
+    margin-right: 10px;
+}
+
+.general-container {
+    display: table;
+    border-spacing: 10px 0;
+}
+
+.general-container p {
+    display: table-row;
+}
+
+.general-container b {
+    display: table-cell;
+    text-align: right;
+}
+
+.general-container span {
+    display: table-cell;
 }
 
 
