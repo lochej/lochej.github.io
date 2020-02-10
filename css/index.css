@@ -8,10 +8,10 @@
     --navColor: white;
     --shadowColor: #555555;
     --profileTextColor: black;
-    --boxShadowStyle: 1px 1px 10px var(--shadowColor);
+    --boxShadowStyle: 0px 1px 5px var(--shadowColor);
     --cardBackground: white;
     --accentBorderStyle: 5px solid var(--colorAccent);
-    --fastTransitionDuration: 0.3s;
+    --fastTransitionDuration: 0.2s;
     --mediumTransitionDuration: 0.4s;
     --longTransitionDuration: 0.6s;
 }
@@ -20,9 +20,10 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 10px;
+    height: 100%;
     background: var(--pageBackground);
 }
 
@@ -31,7 +32,7 @@ body {
 
 .header {
     text-align: center;
-    background-image: url("img/index_header.jpg")
+    /*background-image: url("../img/code-bg.jpg");*/
 }
 
 .header h1 {
@@ -73,6 +74,11 @@ body {
     border-radius: 50%;
     border: var(--accentBorderStyle);
     box-shadow: var(--boxShadowStyle);
+    transition: var(--fastTransitionDuration);
+}
+
+.header .profile-container img:hover {
+    border-color: var(--colorAccent2);
 }
 
 
@@ -87,9 +93,12 @@ body {
     transition: var(--fastTransitionDuration);
 }
 
+
+/*
 .topnav:hover {
     border-bottom-color: var(--colorAccent2);
 }
+*/
 
 
 /* Style the topnav links */
@@ -106,6 +115,7 @@ body {
 
 .topnav a.active {
     background: var(--colorPrimary);
+    border-bottom-color: var(--colorAccent2);
 }
 
 
@@ -149,9 +159,12 @@ body {
     transition: var(--fastTransitionDuration);
 }
 
+
+/*
 .card:hover {
     border-bottom-color: var(--colorAccent2);
 }
+*/
 
 .card i {
     color: var(--colorAccent);
@@ -160,6 +173,53 @@ body {
 .card .quote {
     font-size: 24px;
     margin: 5px;
+}
+
+#feedback-card {
+    text-align: center;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form-container label {
+    display: block;
+}
+
+input,
+textarea,
+button {
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    min-width: 6cm;
+    font-size: 14px;
+}
+
+input:hover,
+textarea:hover,
+button:hover {
+    box-shadow: var(--boxShadowStyle);
+}
+
+button {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 3px;
+    border: var(--accentBorderStyle);
+    border-color: var(--colorAccent);
+    border-width: 2px;
+    display: block;
+    transition: 0.05s;
+}
+
+button:hover {
+    border-color: var(--colorAccent2);
+    box-shadow: var(--boxShadowStyle);
 }
 
 .social-links {
