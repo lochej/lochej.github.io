@@ -12,7 +12,7 @@ function displayCountdown() {
 
     if (countdown <= 0) {
         clearInterval(timer);
-        window.location.href = "index.php";
+        window.location.href = "index.html";
     }
 
 }

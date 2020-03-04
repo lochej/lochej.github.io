@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lochej Game</title>
+    <link rel="stylesheet" href="css/game.css">
+    <script src="js/game.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>The lochej's Snake game</h1>
+    </div>
+    <div class="topnav no-print">
+        <a href="index.php">Home</a>
+        <a onclick="gameInitHandler()" class="active">Restart Game</a>
+        <a href="game.html">Refresh page</a>
+        <a href="contact.php" style="float:right">Contact</a>
+    </div>
+
+    <div class="row">
+        <div class="leftcolumn">
+            <div id="game-container">
+                <noscript>
+					<h1>You need Javascript to run this game :)</h1>
+				</noscript>
+                <canvas hidden id="game-canvas" width=600 height=600>You need HTML5 to run this game :)</canvas>
+
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>Score : <span id="score">0</span></h2>
+            </div>
+            <div id="keymap-container">
+                <div class="card">
+                    <h2>Key Map</h2>
+                    <p>Go Up: <kbd>↑</kbd> or <kbd>z</kbd></p>
+                    <p>Go Down: <kbd>↓</kbd> or <kbd>s</kbd></p>
+                    <p>Go Left: <kbd>←</kbd> or <kbd>q</kbd></p>
+                    <p>Go Right: <kbd>→</kbd> or <kbd>d</kbd></p>
+                    <p>Boost Speed: <kbd>Space</kbd></p>
+                    <p>Restart game: <kbd>Space</kbd> or <kbd>r</kbd></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

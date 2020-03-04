@@ -1,21 +1,4 @@
-:root {
-    --pageBackground: #eff6ee;
-    --colorPrimary: #787d92;
-    --colorPrimaryDark: #273043;
-    --colorAccent: #f02d3a;
-    --colorAccent2: rgb(0, 214, 71);
-    --colorAccentDark: #bd212b;
-    --navColor: white;
-    --shadowColor: #555555;
-    --profileTextColor: black;
-    --boxShadowStyle: 0px 1px 5px var(--shadowColor);
-    --cardBackground: white;
-    --accentBorderStyle: 5px solid var(--colorAccent);
-    --fastTransitionDuration: 0.2s;
-    --mediumTransitionDuration: 0.4s;
-    --longTransitionDuration: 0.6s;
-}
-
+@import "color_style.css";
 * {
     box-sizing: border-box;
 }
@@ -32,7 +15,6 @@ body {
 
 .header {
     text-align: center;
-    /*background-image: url("../img/code-bg.jpg");*/
 }
 
 .header h1 {
@@ -44,6 +26,19 @@ body {
 .header h2 {
     color: var(--profileTextColor);
     font-size: 25px;
+}
+
+.header .profile-container img {
+    width: 5cm;
+    height: 5cm;
+    border-radius: 50%;
+    border: var(--accentBorderStyle);
+    box-shadow: var(--boxShadowStyle);
+    transition: var(--fastTransitionDuration);
+}
+
+.header .profile-container img:hover {
+    border-color: var(--colorAccent2);
 }
 
 .trailing-underscore {
@@ -68,21 +63,8 @@ body {
     }
 }
 
-.header .profile-container img {
-    width: 5cm;
-    height: 5cm;
-    border-radius: 50%;
-    border: var(--accentBorderStyle);
-    box-shadow: var(--boxShadowStyle);
-    transition: var(--fastTransitionDuration);
-}
 
-.header .profile-container img:hover {
-    border-color: var(--colorAccent2);
-}
-
-
-/* Style the top navigation bar */
+/*=============== Style the top navigation bar =============*/
 
 .topnav {
     overflow: hidden;
@@ -92,13 +74,6 @@ body {
     margin-bottom: 10px;
     transition: var(--fastTransitionDuration);
 }
-
-
-/*
-.topnav:hover {
-    border-bottom-color: var(--colorAccent2);
-}
-*/
 
 
 /* Style the topnav links */
@@ -124,6 +99,9 @@ body {
 .topnav a:hover {
     color: var(--colorAccent);
 }
+
+
+/*============ Content columns ===================*/
 
 
 /* Create two unequal columns that floats next to each other */
@@ -159,13 +137,6 @@ body {
     transition: var(--fastTransitionDuration);
 }
 
-
-/*
-.card:hover {
-    border-bottom-color: var(--colorAccent2);
-}
-*/
-
 .card i {
     color: var(--colorAccent);
 }
@@ -175,7 +146,7 @@ body {
     margin: 5px;
 }
 
-#feedback-card {
+.centered-card {
     text-align: center;
     width: 500px;
     margin-right: auto;
@@ -186,7 +157,7 @@ body {
     display: block;
 }
 
-input,
+.form-container input,
 textarea,
 button {
     padding: 10px;
@@ -197,7 +168,7 @@ button {
     font-size: 14px;
 }
 
-input:hover,
+.form-container input:hover,
 textarea:hover,
 button:hover {
     box-shadow: var(--boxShadowStyle);
@@ -311,10 +282,53 @@ button:hover {
     margin-top: 10px;
 }
 
+.comment-zone {
+    text-align: right;
+    padding: 10px;
+    color: white;
+    overflow-y: scroll;
+    height: 700px;
+    max-height: 100%;
+}
+
+.comment-bubble {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px 5px 10px 10px;
+    box-shadow: var(--boxShadowStyle);
+    border-bottom: var(--accentBorderStyle);
+    border-right: var(--accentBorderStyle);
+    background: var(--commentsBackground);
+}
+
+.comment-bubble.bubble-1 {
+    border-color: var(--colorAccent);
+}
+
+.comment-bubble.bubble-2 {
+    border-color: var(--colorAccent2);
+}
+
+.comment-bubble .pseudo {
+    text-align: end;
+}
+
+.comment-bubble .content {
+    text-align: start;
+    margin-bottom: 5px;
+}
+
+.project-card img {
+    display: block;
+    max-height: 8cm;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
     .leftcolumn,
     .rightcolumn {
         width: 100%;
