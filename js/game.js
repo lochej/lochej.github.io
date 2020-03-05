@@ -31,6 +31,8 @@ function Snake() {
         { x: 9, y: 10 },
         { x: 8, y: 10 }
     ];
+    this.gameStartDate = new Date();
+    this.gameEndDate = null;
     this.tickCounter = 0;
     this.tickBeforeUpdate = 5;
     this.direction = Direction.Right;
@@ -146,11 +148,13 @@ function Snake() {
         //Check that we are not eating ourself LOSE
         if (this.isPointInSnakeBody(newHeadPosition)) {
             this.haslost = true;
+            this.gameEndDate = new Date();
         }
 
         //If we are hiting the walls we lose
         if (!valueInRange(newHeadPosition.x, 0, gridW - 1) || !valueInRange(newHeadPosition.y, 0, gridH - 1)) {
             this.haslost = true;
+            this.gameEndDate = new Date();
             return;
         }
 
@@ -194,6 +198,8 @@ function gameInitHandler() {
     fruits.push(generateNewFruit());
 
     snake = new Snake();
+    snake.gameStartDate = new Date();
+    snake.gameEndDate = new Date();
 }
 
 function updateGameTimer() {
@@ -319,6 +325,25 @@ function drawSnake(ctx, snake) {
 function drawScore() {
     element = document.getElementById("score");
     element.innerHTML = snake.score;
+
+    snakeLength = document.getElementById("snake-length");
+    snakeLength.innerHTML = snake.body.length;
+
+    snakeTime = document.getElementById("snake-time");
+
+    var endTime = new Date();
+    if (snake.hasLost()) {
+        endTime = snake.gameEndDate;
+    }
+
+    var diffTimeMs = endTime.getTime() - snake.gameStartDate.getTime();
+    var tenthseconds = Math.floor(diffTimeMs / 100);
+    var minutes = Math.floor(tenthseconds / 600);
+    var seconds = (tenthseconds % 600) / 10;
+
+
+    snakeTime.innerHTML = minutes + " min " + seconds.toFixed(1) + " s";
+
 }
 
 function drawFruits(ctx, fruits) {
